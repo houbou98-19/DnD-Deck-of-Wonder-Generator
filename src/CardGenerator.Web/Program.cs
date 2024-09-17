@@ -1,7 +1,14 @@
+using CardGenerator.Application.Interfaces;
+using CardGenerator.Application.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<ICardService, CardService>();
+builder.Services.AddScoped<Random>();
+
 
 var app = builder.Build();
 
