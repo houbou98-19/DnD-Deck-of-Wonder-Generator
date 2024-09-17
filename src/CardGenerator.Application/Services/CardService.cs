@@ -25,7 +25,7 @@ namespace CardGenerator.Application.Services
                     new Card("K", "End", "♠", "You take 2d10 necrotic damage, and your hit point maximum is reduced by an amount equal to the damage taken. This effect can't reduce your hit point maximum below 10 hit points. This reduction lasts until you finish a long rest, but it can be ended early by a Remove Curse spell or similar magic."),
                     new Card("Q", "Monster", "♠", "While cursed in this way, whenever you make a saving throw, you must roll 1d4 and subtract the number rolled from the total. The curse lasts until you finish a long rest, but it can be ended early with a Remove Curse spell or similar magic."),
                     new Card("J", "Knife", "♠", "You become vulnerable to either bludgeon damage, slashing damage, or piercing damage, chosen at random. Lasts 8 hours."),
-                    new Card("Joker", "Mischief", "Joker", "Choose one creature within 60 feet, the chosen creature must roll once on the wild magic table, or you can draw two additional cards beyond your declared draws.")
+                    new Card("Joker", "Mischief", "", "Choose one creature within 60 feet, the chosen creature must roll once on the wild magic table, or you can draw two additional cards beyond your declared draws.")
                 };
         }
        public CardDTO DrawCard()
