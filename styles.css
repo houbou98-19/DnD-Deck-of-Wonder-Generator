@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#cardDisplay {
+    margin-top: 20px;
+}
+
+#cardNumber {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#cardName {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#cardSuit {
+    font-size: 18px;
+    color: gray;
+}
+
+#cardEffect {
+    font-size: 16px;
+}
+
+/* Other CSS remains the same */
+
+#cardRankAndSuit {
+    font-size: 28px; /* Same size for both rank and suit */
+    font-weight: bold;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cardRankAndSuit span {
+    margin: 0 5px; /* Spacing between the rank and suit */
+}
+
+#cardName {
+    font-size: 24px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+#cardEffect {
+    font-size: 16px;
+    text-align: center;
+}
+
