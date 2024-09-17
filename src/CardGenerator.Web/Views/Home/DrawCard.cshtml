@@ -1,0 +1,17 @@
+@model CardGenerator.Web.Models.CardViewModel
+@{
+    ViewData["Title"] = "Card Randomizer";
+}
+
+<h1>Random Card Selector</h1>
+
+<div class="cardRankAndSuit">
+  <span class="cardNumber">@Model.Number</span>
+  <span class="cardSuit">@Model.Suit</span>
+</div>
+<h3 class="cardName">@Model.Name</h3>
+<p class="cardEffect">@Model.Effect</p>
+
+<div class="container">
+  <button class="btn btn-primary drawCardButton" onclick="DrawCard()">Draw a Card</button>
+</div>
