@@ -1,0 +1,29 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+    build_and_push:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Restore dependencies (install Nuget packages)
+              run: dotnet restore
+
+            - name: login to GitHub Container Registry
+              run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+            - name: Docker image
+              run: |
+                docker build -t ghcr.io/houbou98/${{ github.repository }}:latest .
+                docker push ghcr.io/houbou98/${{ github.repository }}:latest    
