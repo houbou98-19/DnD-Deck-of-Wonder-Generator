@@ -42,8 +42,9 @@ jobs:
             - name: Pull Docker Image
               run: |
                 repository_lowercase=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-                docker pull ghcr.io/${{ github.actor}}/${repository_lowercase}:latest
+                docker pull ghcr.io/houbou98-19/${repository_lowercase}:latest
 
             - name: Run Docker Container
               run: |
-                docker run -d --name ${repository_lowercase} -p 80:8080 ghcr.io/${{ github.actor}}/${repository_lowercase}:latest
+                repository_lowercase=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+                docker run -d --name ${repository_lowercase} -p 80:8080 ghcr.io/houbou98-19/${repository_lowercase}:latest
