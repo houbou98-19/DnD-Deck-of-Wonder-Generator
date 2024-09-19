@@ -47,4 +47,4 @@ jobs:
             - name: Run Docker Container
               run: |
                 repository_lowercase=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-                docker run -d --name ${repository_lowercase} -p 80:8080 ghcr.io/houbou98-19/${repository_lowercase}:latest
+                docker run -d --name DeckOfWonder -p 80:8080 ghcr.io/houbou98-19/${repository_lowercase}:latest
