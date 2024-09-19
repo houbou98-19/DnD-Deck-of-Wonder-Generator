@@ -36,8 +36,14 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
-            - name: Build Docker image and run container
+            - name: Login to GitHub Container Registry
+              run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+            - name: Pull Docker Image
               run: |
                 repository_lowercase=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-                docker pull ghcr.io/${{github.actor}}/${{github.actor}}/${repository_lowercase}:latest
-                docker run -d --name ${repository_lowercase} -p 80:8080 ghcr.io/${{github.actor}}/${{github.actor}}/${repository_lowercase}:latest
+                docker pull ghcr.io/${{ github.actor}}/${repository_lowercase}:latest
+
+            - name: Run Docker Container
+              run: |
+                docker run -d --name ${repository_lowercase} -p 80:8080 ghcr.io/${{ github.actor}}/${repository_lowercase}:latest
