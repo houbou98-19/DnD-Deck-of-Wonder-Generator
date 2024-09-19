@@ -44,6 +44,12 @@ jobs:
                 repository_lowercase=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
                 docker pull ghcr.io/houbou98-19/${repository_lowercase}:latest
 
+            - name: Remove Existing Container (if any)
+              run: |
+                repository_lowercase=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+                docker stop DeckOfWonder || true
+                docker rm DeckOfWonder || true
+
             - name: Run Docker Container
               run: |
                 repository_lowercase=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
